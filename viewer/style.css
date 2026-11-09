@@ -1,0 +1,355 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #263746;
+  background: #eef1f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-header {
+  background: #263746;
+  color: white;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header h1 {
+  font-size: 21px;
+  margin: 0;
+}
+
+.app-header p {
+  font-size: 12px;
+  margin: 4px 0 0;
+  color: #c8d4dd;
+}
+
+#menuButton {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #80909c;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  min-height: calc(100vh - 65px);
+}
+
+.navigation {
+  background: white;
+  border-right: 1px solid #d4dce2;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.navigation label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 12px 0 6px;
+}
+
+.navigation select,
+.navigation input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbc7d0;
+  border-radius: 5px;
+  background: white;
+  font-size: 14px;
+}
+
+.navigation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 0 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#expandButton {
+  border: 0;
+  background: none;
+  color: #1769aa;
+  font-size: 12px;
+}
+
+
+#partSearchResults {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.part-search-result {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  margin: 6px 0;
+  text-align: left;
+  background: #f4f7f9;
+  border: 1px solid #dce2e7;
+  border-radius: 5px;
+  color: #263746;
+}
+
+.part-search-result strong,
+.part-search-result span,
+.part-search-result small {
+  display: block;
+}
+
+.part-search-result span {
+  margin-top: 3px;
+}
+
+.part-search-result small {
+  margin-top: 4px;
+  color: #647583;
+}
+
+.part-search-result:hover {
+  background: #e8f0f5;
+}
+
+.content {
+  padding: 26px;
+  min-width: 0;
+}
+
+.welcome,
+.content-card {
+  background: white;
+  border: 1px solid #dce2e7;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.welcome h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  #menuButton {
+    display: block;
+  }
+
+  .app-layout {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+    border-right: 0;
+    border-bottom: 1px solid #d4dce2;
+  }
+
+  .navigation.open {
+    display: block;
+  }
+
+  .content {
+    padding: 14px;
+  }
+}
+
+/* Topic and catalogue content */
+.content-card {
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.content-card h2,
+.content-card h3 {
+  margin-top: 0;
+}
+
+.topic-info {
+  color: #687987;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.catalogue table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.catalogue th,
+.catalogue td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid #dce2e7;
+  vertical-align: top;
+}
+
+.catalogue th {
+  background: #edf2f6;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.catalogue tr:nth-child(even) {
+  background: #f8fafb;
+}
+
+.illustration-placeholder {
+  background: #f1f4f6;
+  border: 1px dashed #aab8c3;
+  border-radius: 5px;
+  padding: 25px 12px;
+  text-align: center;
+  color: #667987;
+}
+
+@media (max-width: 700px) {
+  .catalogue {
+    padding: 14px;
+  }
+
+  .catalogue table {
+    font-size: 12px;
+  }
+
+  .catalogue th,
+  .catalogue td {
+    padding: 8px 6px;
+  }
+}
+
+/* Illustration display frame */
+.illustration-placeholder {
+  min-height: 180px;
+  aspect-ratio: 16 / 9;
+  max-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 15px 0 20px;
+  background: #f5f7f9;
+  border: 1px dashed #9aabb8;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .illustration-placeholder {
+    min-height: 150px;
+  }
+}
+
+/* Horizontally scrollable parts tables */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 12px 0;
+}
+
+.table-scroll table {
+  min-width: 600px;
+  width: 100%;
+}
+
+/* Workshop procedure layout */
+.procedure-steps {
+  padding-left: 28px;
+  line-height: 1.6;
+}
+
+.procedure-steps > li {
+  margin-bottom: 18px;
+  padding-left: 5px;
+}
+
+/* Safety warning panels */
+.procedure-warning {
+  background: #fff3e8;
+  border-left: 5px solid #d97706;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 12px 0;
+}
+
+.procedure-warning strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #9a3412;
+}
+
+.procedure-warning p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.included-procedure {
+  display: block;
+  width: 100%;
+  background: #edf3f7;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 8px 0;
+  text-align: left;
+  cursor: pointer;
+  color: #245675;
+  font: inherit;
+}
+
+.included-procedure:hover {
+  background: #dceaf2;
+}
+
+.offline-download {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #d4dce2;
+  border-radius: 6px;
+  background: #f4f7f9;
+}
+
+#offlineDownloadButton {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  background: #263746;
+  color: white;
+  font-size: 13px;
+}
+
+#offlineDownloadButton:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#offlineDownloadProgress {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#offlineDownloadStatus {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #526574;
+}

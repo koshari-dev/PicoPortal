@@ -1,0 +1,18 @@
+# Extracted workshop content
+/viewer/data/
+/source/hierarchy/
+
+# Generated build files
+/build/
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+
+# Backups
+*.bak
+*~
+
+# Local configuration
+.DS_Store
+Thumbs.db

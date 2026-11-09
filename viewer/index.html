@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#263746">
+  <title>Workshop Manual Mobile</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Workshop Manual</h1>
+      <p>Offline technical reference</p>
+    </div>
+    <button id="menuButton" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main class="app-layout">
+    <aside id="navigation" class="navigation">
+      <label for="publicationSelect">Publication</label>
+      <select id="publicationSelect"></select>
+
+      <label for="searchInput">Search this publication</label>
+      <input id="searchInput" type="search" placeholder="Search topics and parts...">
+      <div id="partSearchResults" aria-live="polite"></div>
+      <div class="offline-download">
+        <button id="offlineDownloadButton" type="button">
+          Download manual for offline use
+        </button>
+        <progress id="offlineDownloadProgress" value="0" max="100" hidden></progress>
+        <p id="offlineDownloadStatus" aria-live="polite">
+          Download manual data before using it offline.
+        </p>
+      </div>
+
+      <div class="navigation-heading">
+        <strong>Contents</strong>
+        <button id="expandButton">Expand all</button>
+      </div>
+
+      <nav id="tree" aria-label="Manual contents"></nav>
+    </aside>
+
+    <section id="content" class="content">
+      <div class="welcome">
+        <h2>Workshop Manual Mobile</h2>
+        <p>Select a section or topic from the contents.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
